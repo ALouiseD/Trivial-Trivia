@@ -1,7 +1,9 @@
 .top-navbar {
   display: flex;
-  justify-content: space-between; /* Space out the left and right sections */
-  background-color: #FFCB05; /* The background color of the navigation bar */
+  justify-content: space-between;
+  /* Space out the left and right sections */
+  background-color: #FFCB05;
+  /* The background color of the navigation bar */
   padding: 10px 20px;
   font-family: Arial, sans-serif;
 }
@@ -10,19 +12,20 @@
   text-decoration: none;
   margin-right: 25px;
   font-weight: bold;
-  color: rgb(255, 255, 255); 
+  color: rgb(255, 255, 255);
   font-family: 'Franklin Gothic Medium',
-        'Arial Narrow',
-        Arial, sans-serif;/* Links color */
+    'Arial Narrow',
+    Arial, sans-serif;
+  /* Links color */
 
-  transition:.3s;
+  transition: .3s;
   font-size: 2rem;
   height: 2.5rem;
 }
 
-.nav-left a:hover{
-    background-color:black;
-    border-radius:25px;
+.nav-left a:hover {
+  background-color: black;
+  border-radius: 25px;
 }
 
 .nav-right .login-btn {
@@ -31,32 +34,36 @@
   color: black;
   padding: 5px 10px;
   border-radius: 5px;
-  background-color: white; /* Background for the login button */
-  transition:.3s;
+  background-color: white;
+  /* Background for the login button */
+  transition: .3s;
 }
 
 .nav-right .login-btn:hover {
-  background-color: #ccc; /* Hover effect for the login button */
+  background-color: #ccc;
+  /* Hover effect for the login button */
   color: black;
 }
 
-.nav-right .sign-btn{
-    text-decoration: none;
-    font-weight: bold;
-    color: black;
-    padding: 5px 10px;
-    border-radius: 5px;
-    background-color: white; /* Background for the sign in button */
-    transition:.3s;
-    
+.nav-right .sign-btn {
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: white;
+  /* Background for the sign in button */
+  transition: .3s;
+
 }
 
 .nav-right .sign-btn:hover {
-    background-color: #ccc; /* Hover effect for the sign button */
-    color: black;
-  }
+  background-color: #ccc;
+  /* Hover effect for the sign button */
+  color: black;
+}
 
-  .search-container {
+.search-container {
   position: relative;
   display: flex;
   align-items: center;
@@ -69,175 +76,224 @@
 }
 
 .search-container input[type="search"] {
-  padding: 5px 10px 5px 30px; /* Adjust padding to make room for the icon */
+  padding: 5px 10px 5px 30px;
+  /* Adjust padding to make room for the icon */
   margin-right: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
 
 .banner {
-    background-color: #00274C;
-    /* Dark blue background */
-    color: white;
-    text-align: center;
-    padding: 10px;
-    font-family: Arial, sans-serif;
+  background-color: #00274C;
+  /* Dark blue background */
+  color: white;
+  text-align: center;
+  padding: 10px;
+  font-family: Arial, sans-serif;
 }
 
 .logo {
-    font-size: 50px;
-    /* Adjust size as needed */
-    color: #FFCB05;
-    /* Maize color for 'M' logo */
-    display: inline-block;
-    vertical-align: middle;
-    
+  font-size: 50px;
+  /* Adjust size as needed */
+  color: #FFCB05;
+  /* Maize color for 'M' logo */
+  display: inline-block;
+  vertical-align: middle;
+
 }
 
 .text {
-    display: inline-block;
-    vertical-align: middle;
-    margin-left: 10px;
-    font-weight: bold;
-    font-size: 32px;
-    /* Adjust size as needed */
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 10px;
+  font-weight: bold;
+  font-size: 48px;
+  /* Adjust size as needed */
 }
 
 .navbar {
-    background-color: #FFCB05;
-    font-size: 2rem;
-    height: 2.5rem;
-    text-align: center;
-    
-  
+  background-color: #FFCB05;
+  font-size: 2rem;
+  height: 2.5rem;
+  text-align: center;
+
+
 }
 
 .menu {
-    margin: 0 3rem;
-    justify-content: space-around;
-    font-family: 'Franklin Gothic Medium',
-        'Arial Narrow',
-        Arial, sans-serif;
+  margin: 0 3rem;
+  justify-content: space-around;
+  font-family: 'Franklin Gothic Medium',
+    'Arial Narrow',
+    Arial, sans-serif;
 }
 
 .dropdown {
-    float: left;
-    overflow: hidden;
+  float: left;
+  overflow: hidden;
 }
 
 .dropdown .dropbtn {
-    font-size: 16px;
-    border: none;
-    outline: none;
-    color: white;
-    padding: 14px 16px;
-    background-color: inherit;
-    font-family: inherit;
-    margin: 0;
-   
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+
 }
 
 .navbar a:hover,
 .dropdown:hover .dropbtn {
-    background-color: rgb(0, 0, 0);
-    border-radius:25px;
-    transition:.5s;
+  background-color: rgb(0, 0, 0);
+  border-radius: 25px;
+  transition: .5s;
 }
 
 
 
 .body {
-    display: flex;
-    background-color: #00274C;
-    color: white;
+  display: flex;
+  background-color: #00274C;
+  color: white;
 }
 
 h3 {
-    color: #ffffff;
+  color: #ffffff;
 }
 
 h4 {
-    font-size: 1.5rem;
-    padding: 0 1rem;
-    font-family: Arial, Helvetica, sans-serif;
-    transition:.3s;
+  font-size: 55px;
+  padding: 0 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+  transition: .3s;
 }
 
 p {
-    font-size: 1rem;
-    padding: 0 1rem;
-    font-family: Arial, Helvetica, sans-serif;
+  font-size: 22px;
+  padding: 0 1rem;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 a {
-    text-decoration: none;
-    color: #ffffff;
-    padding: 0 4rem;
+  text-decoration: none;
+  color: #ffffff;
+  padding: 0 4rem;
 }
 
 /* Targeting the bottom half */
 .bottom-section {
-    background-color: black; /* Make the background black */
-    opacity:.8;
-    color: white; /* Change the text color to white for better contrast */
-    padding: 50px; /* Add padding to make it look better */
-  }
- 
+  background-color: black;
+  /* Make the background black */
+  opacity: .8;
+  color: white;
+  /* Change the text color to white for better contrast */
+  padding: 50px;
+  /* Add padding to make it look better */
+}
 
-  /* Style for the grid layout */
+
+/* Style for the grid layout */
 .grid-section {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); 
-    grid-template-rows: repeat(4, 1fr); 
-    gap: 35px; /* Space between the boxes */
-    background-color: black; /* Black background */
-    padding: 35px;
-    
-  }
-  
-  .grid-item {
-    background-color: #f0f0f0; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 25px; /* Rounded corners */
-    height: 100px; /* Set a fixed height for the boxes */
-    transition:.3s;
-    margin:35px;
-  }
-  
-  .grid-item a {
-    text-decoration: none;
-    color: black; /* Link text color */
-    font-weight: bold;
-    font-size: 18px;
-    transition:.3s;
-  }
-  
-  .grid-item:hover {
-    background-color: #FFCB05; /* Change color on hover */
-  }
-  
-  .grid-item a:hover {
-    color: white; /* Change text color on hover */
-  }
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 35px;
+  /* Space between the boxes */
+  background-color: black;
+  /* Black background */
+  padding: 35px;
 
-  footer {
-    background-color: #00274C; /* Dark background */
-    color: #fff; /* White text */
-    padding: 20px 0;
-    text-align: center;
 
-  }
+}
+
+.grid-item {
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+  /* Rounded corners */
+  height: 155px;
+  /* Set a fixed height for the boxes */
+  transition: .3s;
+  margin: 50px;
+  overflow: hidden;
+
+}
+
+.grid-item a {
+  text-decoration: none;
+  color: black;
+  /* Link text color */
+  font-weight: bold;
+  font-size: 18px;
+  transition: .3s;
+}
+
+.grid-item:hover {
+  background-color: #FFCB05;
+  /* Change color on hover */
+}
+
+.grid-item a:hover {
+  color: white;
+  /* Change text color on hover */
+}
+
+.grid-item img {
+  max-width: 100%;
+  height: 100%;
+  object-fit: cover;
   
-  .social-media a {
-    color: #fff; /* White icons */
-    margin: 0 10px;
-    font-size: 24px; /* Icon size */
-    text-decoration: none;
-    transition:.5s;
-  }
-  
-  .social-media a:hover {
-    color: #FFCB05; /* Light grey on hover */
-  }
+}
+
+.home-bottom-image {
+  display: flex;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 125vh;
+  opacity: .7;
+  border-top: 25px #FFCB05 solid;
+  border-bottom: 25px #FFCB05 solid;
+
+}
+
+.bottom-image-center-text {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background-color: black;
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+
+footer {
+  background-color: #00274C;
+  /* Dark background */
+  color: #fff;
+  /* White text */
+  padding: 20px 0;
+  text-align: center;
+
+}
+
+.social-media a {
+  color: #fff;
+  /* White icons */
+  margin: 0 10px;
+  font-size: 24px;
+  /* Icon size */
+  text-decoration: none;
+  transition: .5s;
+}
+
+.social-media a:hover {
+  color: #FFCB05;
+  /* Light grey on hover */
+}
