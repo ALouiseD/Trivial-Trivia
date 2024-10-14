@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Trivial Trivia</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="home-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        
+        .content-wrapper {
+            background-image: url('Images/UM-Flint-Campus-.jpeg');
+            background-size: cover;
+            background-position: center;
+            padding: 20px;
+            min-height: 100vh; 
+        }
+
+        .trivia-section {
+            background-color: rgba(0, 0, 0, 0.6); 
+            color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .trivia-section h2 {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .btn-outline-light {
+            background-color: rgba(0, 0, 0, 0.6);
+            border: none;
+            color: white;
+        }
+
+        .btn-lg {
+            font-size: 1.75rem;
+            padding: 20px 30px;
+        }
+
+        .nav-arrows {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+        }
+
+        .nav-arrow-left, .nav-arrow-right {
+            font-size: 4rem;
+            color: white;
+            text-decoration: none;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="top-navbar">
+        <div class="nav-left">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <div class="search-container">
+            <i class="fas fa-search"></i>
+            <input type="search" placeholder="Search...">
+        </div>
+        <div class="nav-right">
+            <a href="login.html" class="login-btn">Login</a>
+            <a href="#sign-up" class="sign-btn">Sign Up</a>
+        </div>
+    </div>
+
+    <div class="banner">
+        <span class="logo"><img src="images/UofMLogo.png" alt="University Logo"></span>
+        <span class="text">UNIVERSITY OF MICHIGAN-FLINT</span>
+    </div>
+
+    <div class="content-wrapper">
+        <div class="container mt-5">
+            <div class="about-container text-center mb-4">
+                <h1 class="text-warning">Trivial Trivia</h1>
+            </div>
+
+            <br><br>
+
+            <div class="trivia-section mx-auto text-center">
+                <h2 class="mb-4">What river runs next to the UM-Flint campus?</h2>
+
+                <br>
+
+                <div class="d-grid gap-3">
+                    <button class="btn btn-outline-light btn-lg w-100 mb-4" onclick="checkAnswer('A')">The Flint River</button>
+                    <button class="btn btn-outline-light btn-lg w-100 mb-4" onclick="checkAnswer('B')">The Nile River</button>
+                    <button class="btn btn-outline-light btn-lg w-100 mb-4" onclick="checkAnswer('C')">The Detroit River</button>
+                    <button class="btn btn-outline-light btn-lg w-100 mb-4" onclick="checkAnswer('D')">The Amazon River</button>
+                </div>
+            </div>
+
+            <div class="nav-arrows">
+                <a href="Question2.html" class="nav-arrow-left">
+                    <i class="fas fa-arrow-left"></i>
+                </a>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function checkAnswer(selected) {
+            if (selected === 'A') {
+                alert('Correct! The Flint river does run next to the UM-Flint Campus.');
+            } else {
+                alert('Wrong answer. Try again!');
+            }
+        }
+    </script>
+ 
+</body>
+</html>
