@@ -1,22 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Trivial Trivia</title>
+    <title>Trivial Trivia 1</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="styles.css">
     <link rel="stylesheet" type="text/css" href="home-styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
-        .trivia-section {
-            background-color: #00274C;
-            color: white;
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-    </style>
 </head>
 
 <body>
@@ -41,32 +32,29 @@
         <span class="text">UNIVERSITY OF MICHIGAN-FLINT</span>
     </div>
 
-    <div class="navbar">
-        <div class="menu">
-            <a href="games.html">Games</a>
-            <a href="students.html">Leaderboard</a>
-            <a href="jobs.html">Opportunities</a>
-            <a href="pricing.html">Pricing</a>
-        </div>
-    </div>
+    <div class="content-wrapper">
+        <div class="container mt-5">
+            <div class="about-container text-center mb-4">
+                <h1 class="text-warning">Trivial Trivia</h1>
+            </div>
 
-    <div class="container mt-5">
-        <div class="about-container text-center mb-4">
-            <h1 class="text-warning">Trivial Trivia</h1>
-        </div>
+            <br><br>
 
-        <br><br>
+            <div class="trivia-section mx-auto text-center">
+                <h2 class="mb-4">What state is UM-Flint located in?</h2>
 
-        <div class="trivia-section mx-auto text-center">
-            <h2 class="mb-4">What state is UM-Flint located in?</h2>
-            
-            <br>
-            
-            <div class="d-grid gap-3">
-                <button class="btn btn-outline-light btn-lg w-100 mb-2" onclick="checkAnswer('A')">Utah</button>
-                <button class="btn btn-outline-light btn-lg w-100 mb-2" onclick="checkAnswer('B')">Ohio</button>
-                <button class="btn btn-outline-light btn-lg w-100 mb-2" onclick="checkAnswer('C')">Michigan</button>
-                <button class="btn btn-outline-light btn-lg w-100 mb-2" onclick="checkAnswer('D')">Illinois</button>
+                <br>
+
+                <div class="d-grid gap-3">
+                    <button class="btn btn-outline-light btn-lg w-100 mb-4" onclick="checkAnswer('A')">Utah</button>
+                    <button class="btn btn-outline-light btn-lg w-100 mb-4" onclick="checkAnswer('B')">Ohio</button>
+                    <button class="btn btn-outline-light btn-lg w-100 mb-4" onclick="checkAnswer('C')">Michigan</button>
+                    <button class="btn btn-outline-light btn-lg w-100 mb-4" onclick="checkAnswer('D')">Illinois</button>
+                </div>
+
+                <a href="Question2.html" class="nav-arrow-right">
+                    <i class="fas fa-arrow-right"></i>
+                </a>
             </div>
         </div>
     </div>
