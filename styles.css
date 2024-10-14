@@ -1,79 +1,242 @@
-h1{
-    color:#FFCB05;
-    background-color:#00274C;
+h1 {
+    color: #FFCB05;
+    background-color: #00274C;
 }
 
-.about-container{
-    position:relative;
-    text-align:center;
+.about-container {
+    position: relative;
+    text-align: center;
 }
 
-.about-image{
-    opacity:.5;
-    position:relative;
-    width:100%;
-    height:auto;
-    max-width:100%;
+.about-image {
+    opacity: .5;
+    position: relative;
+    width: 100%;
+    height: 170vh;
+    max-width: 100;
 }
 
-.center-left{
-    position:absolute;
+.center-left {
+    position: absolute;
     top: 8px;
-    left:16px;
+    left: 16px;
 
 }
 
-.center-right{
-    position:absolute;
-    top:8px;
-    right:16px;
+.center-right {
+    position: absolute;
+    top: 8px;
+    right: 16px;
 }
 
-.center-left h1{
-    font-size:100px;
+.center-left h1 {
+    font-size: 100px;
 }
 
-.center-right h1{
-    font-size:100px;
-    margin-left:1085px;
+.center-right h1 {
+    font-size: 100px;
+    margin-left: 1085px;
 }
 
-.center-right p{
-    background-color:#00274C;
-    text-align:justify;
-    color:white;
-    margin-left:1135px;
-    max-width:35%;
-    font-size:22px;
-    line-height:1.6;
+.center-right p {
+    background-color: #00274C;
+    text-align: justify;
+    color: white;
+    margin-left: 1135px;
+    max-width: 35%;
+    font-size: 22px;
+    line-height: 1.6;
 }
 
-.center-left h2{
-    background-color:#00274C;
-    text-align:center;
-    color:white;
+.center-left h2 {
+    background-color: #00274C;
+    text-align: center;
+    color: white;
 }
 
-.center-left p{
-    background-color:#00274C;
-    text-align:justify;
-    color:white;
+.center-left p {
+    background-color: #00274C;
+    text-align: justify;
+    color: white;
 }
 
-.centered-values{
-    position:absolute;
+.centered-values {
+    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, 50%)
 }
 
-.about-member{
-    background-color:#00274C;
-    color:white;
-    height:60px;
-    width:850px;
-    margin: 0 0 15px;
+.about-member {
+    background-color: #00274C;
+    color: white;
+    height: 60px;
+    width: 850px;
     line-height: 1.6;
     margin: 0 0 15px;
+    padding-bottom: 125px;
+    font-weight: 600;
 }
 
+.contact-container {
+    background-image: linear-gradient(180deg, #FFCB05, #00274C)
+}
+
+.contact-container-content h1 {
+    text-align: center;
+    font-size: 75px;
+    margin-top: auto;
+    color: white;
+}
+
+.contact-container-content p {
+    text-align: center;
+    color: white;
+    font-size: 50px;
+}
+
+.contact-image {
+
+    height: 550px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: .7;
+    border-radius: 150px;
+    display: block;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0);
+
+}
+
+.top-navbar-login {
+    display: flex;
+    justify-content: space-between;
+    /* Space out the left and right sections */
+    background-image: linear-gradient(#FFCB05, #00274C);
+    padding: 10px 20px;
+    font-family: Arial, sans-serif;
+}
+
+.nav-left-login a {
+    text-decoration: none;
+    margin-right: 25px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    font-family: 'Franklin Gothic Medium',
+        'Arial Narrow',
+        Arial, sans-serif;
+    /* Links color */
+
+    transition: .3s;
+    font-size: 2rem;
+    height: 2.5rem;
+}
+
+.login-image {
+    margin-right: 50%;
+    margin-left: 25%;
+    margin-top: -55%;
+}
+
+.login-container {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    box-shadow: 0 2px 10px(0, 0, 0, 0.5)
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-form label {
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #333;
+}
+
+.login-form input {
+    padding: 10px;
+    font-size: 14px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.sign-in {
+    background-color: #FFCB05;
+    color: white;
+    font-size: 22px;
+    margin-right: 50%;
+    margin-left: 35%;
+}
+
+.forgot-password,
+.new-user {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+}
+
+.bottom-gradient {
+    background-image: linear-gradient(#FFCB05, #00274C transparent);
+    height: 10vh;
+}
+
+        
+.content-wrapper {
+    background-image: url('Images/UM-Flint-Campus-.jpeg');
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    min-height: 100vh; 
+}
+
+.trivia-section {
+    background-color: rgba(0, 0, 0, 0.6); 
+    color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.trivia-section h2 {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    border-radius: 5px;
+}
+.btn-outline-light {
+    background-color: rgba(0, 0, 0, 0.6);
+    border: none;
+    color: white;
+}
+
+.btn-lg {
+    font-size: 1.75rem;
+    padding: 20px 30px;
+}
+
+.nav-arrow-right {
+    font-size: 4rem;
+    color: white;
+    text-decoration: none;
+    margin-top: 20px;
+    /*display: inline-block;*/
+    float: right;
+}
