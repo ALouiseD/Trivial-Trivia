@@ -1,3 +1,4 @@
+/* Sytling for top navigation bar on page */
 .top-navbar {
   display: flex;
   justify-content: space-between;
@@ -8,6 +9,7 @@
   font-family: Arial, sans-serif;
 }
 
+/* Sytling for navigation bar below UMich logo */
 .nav-left a {
   text-decoration: none;
   margin-right: 25px;
@@ -23,11 +25,12 @@
   height: 2.5rem;
 }
 
+/* Hover action for hovering over nav bar */
 .nav-left a:hover {
   background-color: black;
   border-radius: 25px;
 }
-
+/* Hover action for hovering over login */
 .nav-right .login-btn {
   text-decoration: none;
   font-weight: bold;
@@ -56,7 +59,7 @@
   transition: .3s;
 
 }
-
+/*Hover action when hovering over sign in*/
 .nav-right .sign-btn:hover {
   background-color: #ccc;
   /* Hover effect for the sign button */
@@ -223,7 +226,7 @@ a {
   overflow: hidden;
 
 }
-
+/* Specify grid items for games */
 .grid-item a {
   text-decoration: none;
   color: black;
@@ -232,7 +235,7 @@ a {
   font-size: 18px;
   transition: .3s;
 }
-
+/*Specify action to take when hovering over games */
 .grid-item:hover {
   background-color: #FFCB05;
   /* Change color on hover */
@@ -249,7 +252,7 @@ a {
   object-fit: cover;
   
 }
-
+/*Styling for image at bottom of home page */
 .home-bottom-image {
   display: flex;
   background-size: cover;
@@ -272,7 +275,7 @@ a {
   padding-right: 20px;
 }
 
-
+/*Styling for footer */
 footer {
   background-color: #00274C;
   /* Dark background */
@@ -282,7 +285,7 @@ footer {
   text-align: center;
 
 }
-
+/*Sytling for Social Media links */
 .social-media a {
   color: #fff;
   /* White icons */
