@@ -1,127 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Page title and links to external stylesheets (CSS) and icons -->
     <title>About</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    <link rel="stylesheet" type="text/css" href="home-styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles.css"> <!-- Main stylesheet -->
+    <link rel="stylesheet" type="text/css" href="home-styles.css"> <!-- Additional stylesheet for home page specific styling -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Font Awesome icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"> <!-- Bootstrap CSS for responsive design -->
 </head>
 
 <body>
+    <!-- Navigation bar at the top of the page -->
     <div class="top-navbar">
         <div class="nav-left">
+            <!-- Links to different sections of the website -->
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
             <a href="contact.html">Contact</a>
         </div>
+        <!-- Search bar within the navigation bar -->
         <div class="search-container">
-            <i class="fas fa-search"></i>
-            <input type="search" placeholder="Search...">
+            <i class="fas fa-search"></i> <!-- Search icon using Font Awesome -->
+            <input type="search" placeholder="Search..."> <!-- Search input field -->
         </div>
 
         <div class="nav-right">
-
+            <!-- Login and Sign-Up buttons -->
             <a href="login.html" class="login-btn">Login</a>
             <a href="sign-up.html" class="sign-btn">Sign Up</a>
         </div>
     </div>
+
+    <!-- Banner section with logo and university name -->
     <div class="banner">
-        <span class="logo"><img src="images/UofMLogo.png"></span>
-        <span class="text">UNIVERSITY OF MICHIGAN-FLINT</span>
-
-
+        <span class="logo"><img src="images/UofMLogo.png"></span> <!-- University logo -->
+        <span class="text">UNIVERSITY OF MICHIGAN-FLINT</span> <!-- Text displaying university name -->
     </div>
 
-   
-    </div>
-
+    <!-- Main content: Pricing section for different plans -->
     <div class="container py-5">
+        <!-- Section header -->
         <h2 class="text-center" style="font-size:50px;">Pricing</h2>
-        <p class="text-center" style="font-size:24px;"> Choose the perfect plan to unlock the full Trivial Trivia experience at UofM Flint. Whether you're just testing the waters or ready to challenge friends, we have the right plan for you!</p>
+        <p class="text-center" style="font-size:24px;">Choose the perfect plan to unlock the full Trivial Trivia experience at UofM Flint. Whether you're just testing the waters or ready to challenge friends, we have the right plan for you!</p>
         
         <div class="row text-center">
-         
-          <div class="col-md-4 mb-3">
-            <div class="card">
-              <div class="card-header">
-                <h3 class="my-0">Free</h3>
-              </div>
-              <div class="card-body">
-                <h4 class="card-title pricing-card-title">$0 <small class="text-muted">/ mo</small></h4>
-                <ul class="list-unstyled mt-3 mb-4">
-                  <li>Access to 10 trivia questions</li>
-                  <li>Basic leaderboard access</li>
-                  <li>Email support</li>
-                  <li>Access to campus trivia challenges</li>
-                </ul>
-                <button type="button" class="w-100 btn btn-lg btn-outline-primary">Play for free</button>
-              </div>
+            <!-- Free plan card -->
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="my-0">Free</h3> <!-- Plan name -->
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title pricing-card-title">$0 <small class="text-muted">/ mo</small></h4> <!-- Pricing information -->
+                        <!-- List of features for the Free plan -->
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li>Access to 10 trivia questions</li>
+                            <li>Basic leaderboard access</li>
+                            <li>Email support</li>
+                            <li>Access to campus trivia challenges</li>
+                        </ul>
+                        <!-- Button to play for free -->
+                        <button type="button" class="w-100 btn btn-lg btn-outline-primary">Play for free</button>
+                    </div>
+                </div>
             </div>
-          </div>
-    
-          
-          <div class="col-md-4 mb-3">
-            <div class="card">
-              <div class="card-header">
-                <h3 class="my-0">Pro</h3>
-              </div>
-              <div class="card-body">
-                <h4 class="card-title pricing-card-title">$9 <small class="text-muted">/ mo</small></h4>
-                <ul class="list-unstyled mt-3 mb-4">
-                  <li>Access to 100 trivia questions</li>
-                  <li>Advanced leaderboard features</li>
-                  <li>Priority email support</li>
-                  <li>Exclusice trivia events and rewards</li>
-                </ul>
-                <button type="button" class="w-100 btn btn-lg btn-primary">Get Pro</button>
-              </div>
-            </div>
-          </div>
-    
-         
-          <div class="col-md-4 mb-3">
-            <div class="card">
-              <div class="card-header">
-                <h3 class="my-0">Premium</h3>
-              </div>
-              <div class="card-body">
-                <h4 class="card-title pricing-card-title">$15 <small class="text-muted">/ mo</small></h4>
-                <ul class="list-unstyled mt-3 mb-4">
-                  <li>Unlimited trivia questions</li>
-                  <li>Custom leaderboard for your group</li>
-                  <li>Phone and email support</li>
-                  <li>Specialized campus-wide trivia challenges</li>
-                </ul>
-                <button type="button" class="w-100 btn btn-lg btn-primary">Contact us</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
-      <footer>
+            <!-- Pro plan card -->
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="my-0">Pro</h3> <!-- Plan name -->
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title pricing-card-title">$9 <small class="text-muted">/ mo</small></h4> <!-- Pricing information -->
+                        <!-- List of features for the Pro plan -->
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li>Access to 100 trivia questions</li>
+                            <li>Advanced leaderboard features</li>
+                            <li>Priority email support</li>
+                            <li>Exclusive trivia events and rewards</li>
+                        </ul>
+                        <!-- Button to upgrade to Pro -->
+                        <button type="button" class="w-100 btn btn-lg btn-primary">Get Pro</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Premium plan card -->
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="my-0">Premium</h3> <!-- Plan name -->
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title pricing-card-title">$15 <small class="text-muted">/ mo</small></h4> <!-- Pricing information -->
+                        <!-- List of features for the Premium plan -->
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li>Unlimited trivia questions</li>
+                            <li>Custom leaderboard for your group</li>
+                            <li>Phone and email support</li>
+                            <li>Specialized campus-wide trivia challenges</li>
+                        </ul>
+                        <!-- Button to contact for Premium plan -->
+                        <button type="button" class="w-100 btn btn-lg btn-primary">Contact us</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS for responsive and dynamic components -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Footer with social media links -->
+    <footer>
         <div class="social-media">
+            <!-- Social media icons linking to respective pages -->
             <a href="https://www.facebook.com/YourPage" target="_blank">
-                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-facebook-f"></i> <!-- Facebook icon -->
             </a>
             <a href="https://www.twitter.com/YourPage" target="_blank">
-                <i class="fab fa-twitter"></i>
+                <i class="fab fa-twitter"></i> <!-- Twitter icon -->
             </a>
             <a href="https://www.instagram.com/YourPage" target="_blank">
-                <i class="fab fa-instagram"></i>
+                <i class="fab fa-instagram"></i> <!-- Instagram icon -->
             </a>
             <a href="https://www.linkedin.com/YourPage" target="_blank">
-                <i class="fab fa-linkedin-in"></i>
+                <i class="fab fa-linkedin-in"></i> <!-- LinkedIn icon -->
             </a>
         </div>
-
-
     </footer>
 
-
-  </body>
-
+</body>
 </html>
