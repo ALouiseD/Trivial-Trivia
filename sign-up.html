@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
     <title>Sign-up</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
@@ -20,8 +22,9 @@
 
         <div class="login-container">
             <img src="Images/UofMLogo.png" class="login-image">
-         <br><br>
+         <br><be>
 
+                <!-- form for sign up input-->
             <form class="login-form" onsubmit="return signUp()"> <!-- onsubmit event to trigger signUp() -->
                 <label for="signUpUsername" style="color: #020218; font-size:55px;">Sign Up</label>
                 <input type="text" id="signUpUsername" name="username" placeholder="Enter username" required>
@@ -32,14 +35,15 @@
                 <div class="button-container">
                     <button class="sign-in" style="background: #00274C; color: #fff;">Sign Up</button>
                 </div>
-                <br>
+                <be>
 
-
+                <!-- redirection to login if the user already has an account-->
                 <a href="login.html" class="new-user" style="color: #00274C; ">Already have an account? Log in</a>
             </form>
         </div>
     </div>
 
+    <!-- footer with the social media link (blank for now)-->
     <footer>
         <div class="social-media">
             <a href="https://www.facebook.com/YourPage" target="_blank">
