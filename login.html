@@ -4,6 +4,7 @@
 
 <head>
     <title>Login Page</title>
+    <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="styles.css">
     <link rel="stylesheet" type="text/css" href="home-styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -16,6 +17,7 @@
     <!-- Wrapper for the entire content -->
     <div class="content-wrapper" style="min-height: 90vh;">
         <div class="top-navbar-login">
+            <!--Home icon to return to the home page-->
             <div class="nav-left-login">
                 <li class="home"><a href="index.html"><div class="home-image"style="border-radius: 10px; background: #00274C; display: flex; justify-content: center; align-items: center;"><i class="fa fa-home"></i></div></a></li>
             </div>
@@ -23,8 +25,9 @@
    
         <div class="login-container">
             <img src="Images/UofMLogo.png" class="login-image">
-            <br><br>
-            
+            <br><be>
+
+            <!-- Here is the login form for the info inpur-->
             <form class="login-form">
                 <label for="username" style="color: #020218;font-size:55px;">Login</label>
                 <input type="text" id="username" name="username" placeholder="Enter username">
@@ -33,7 +36,9 @@
                 <div class="button-container">
                     <button class="sign-in" style="background-color: #00274C; color: #fff;">Enter</button>
                 </div>
-                <br>
+                <be>
+
+                <!-- This is the redirection part to the sign up page if the user does not have an account-->
                 <div>
                     <a href="#" class="forgot-password" style="color: #00274C;">Forgot Password?</a>
                     <hr>
@@ -43,6 +48,8 @@
         </div>
     </div>
 
+
+    <!--Footer with social media links (blank for now)-->
     <footer>
         <div class="social-media">
             <a href="https://www.facebook.com/YourPage" target="_blank">
