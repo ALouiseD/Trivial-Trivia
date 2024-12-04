@@ -18,6 +18,32 @@ const pool = new Pool({
     port: 5432,
 });
 
+/Signup Route
+  app.post('/signup', async (req, res) => {
+    console.log('Request body:', req.body);//log incoming data
+    const { username, email, password } = req.body;
+
+    if (!username || !email || !password) {
+        return res.status(400).json({ error: 'All fields are required' });
+    }
+
+    try {
+        const result = await pool.query(
+            'INSERT INTO users (username, email, password) VALUES ($1, $2, $3) RETURNING id',
+            [username, email, password]
+        );
+
+        const values = [username, email, password]; 
+
+        res.status(201).json({ message: 'User created successfully', userId: result.rows[0].id });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Internal server error' });
+    }
+});
+
+
+
 // Serve the HTML page
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'random.html'));
