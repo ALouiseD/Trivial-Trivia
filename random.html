@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Trivia</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        #result {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Random Trivia</h1>
+    <div id="question-container">
+        <p id="question">Loading a trivia question...</p>
+        <input type="text" id="answer" placeholder="Type your answer here" />
+        <button id="submit-answer">Submit Answer</button>
+    </div>
+    <div id="result"></div>
+
+    <script>
+        // Fetch a random trivia question
+        async function fetchQuestion() {
+            try {
+                const response = await fetch('/random-question');
+                if (response.ok) {
+                    const questionData = await response.json();
+                    document.getElementById('question').textContent = questionData.question;
+                    document.getElementById('question').dataset.correctAnswer = questionData.answer;
+                } else {
+                    document.getElementById('question').textContent = 'Could not fetch a trivia question. Please try again later.';
+                }
+            } catch (error) {
+                console.error('Error fetching trivia question:', error);
+                document.getElementById('question').textContent = 'Error fetching trivia question. Please try again later.';
+            }
+        }
+
+        // Handle answer submission
+        document.getElementById('submit-answer').addEventListener('click', () => {
+            const userAnswer = document.getElementById('answer').value.trim().toLowerCase();
+            const correctAnswer = document.getElementById('question').dataset.correctAnswer.toLowerCase();
+
+            const resultElement = document.getElementById('result');
+            if (userAnswer === correctAnswer) {
+                resultElement.textContent = 'Correct! 🎉';
+                resultElement.style.color = 'green';
+            } else {
+                resultElement.textContent = `Incorrect. The correct answer is: ${correctAnswer}`;
+                resultElement.style.color = 'red';
+            }
+        });
+
+        // Initialize the page by fetching a random question
+        fetchQuestion();
+    </script>
+</body>
+</html>
