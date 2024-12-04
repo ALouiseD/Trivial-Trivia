@@ -18,7 +18,7 @@ const pool = new Pool({
     port: 5432,
 });
 
-/Signup Route
+//Signup Route
   app.post('/signup', async (req, res) => {
     console.log('Request body:', req.body);//log incoming data
     const { username, email, password } = req.body;
