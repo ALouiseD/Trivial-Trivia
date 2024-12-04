@@ -23,23 +23,36 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'random.html'));
 });
 
-// Random Trivia Question API
-app.get('/random-question', async (req, res) => {
+// Fetch a trivia question by sequence number
+app.get('/question/:sequenceNumber', async (req, res) => {
+    const { sequenceNumber } = req.params;
+
     try {
-        const query = `
-            SELECT * FROM trivia_questions
-            ORDER BY RANDOM()
-            LIMIT 1;
-        `;
-        const result = await pool.query(query);
-        if (result.rows.length > 0) {
-            res.json(result.rows[0]); // Return the random trivia question
-        } else {
-            res.status(404).json({ error: "No trivia questions found." });
+        const query = `SELECT * FROM trivia_questions WHERE sequence_number = $1`;
+        const values = [sequenceNumber];
+
+        const result = await pool.query(query, values);
+
+        if (result.rows.length === 0) {
+            return res.status(404).json({ error: 'Question not found' });
         }
+
+        res.json(result.rows[0]);
     } catch (error) {
-        console.error("Error fetching random trivia question:", error);
-        res.status(500).json({ error: "Internal Server Error" });
+        console.error('Error fetching trivia question:', error);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+});
+
+// Fetch all trivia questions in order
+app.get('/questions', async (req, res) => {
+    try {
+        const query = `SELECT * FROM trivia_questions ORDER BY sequence_number ASC`;
+        const result = await pool.query(query);
+        res.json(result.rows);
+    } catch (error) {
+        console.error('Error fetching trivia questions:', error);
+        res.status(500).json({ error: 'Internal Server Error' });
     }
 });
 
