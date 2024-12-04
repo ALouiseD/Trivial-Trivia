@@ -11,9 +11,9 @@ const pool = new Pool({
 
 // Predefined trivia questions
 const triviaData = [
-    { question: 'What is the capital of France?', answer: 'Paris', sequenceNumber: 1 },
-    { question: 'Who wrote "To Kill a Mockingbird"?', answer: 'Harper Lee', sequenceNumber: 2 },
-    { question: 'What is the largest planet in our solar system?', answer: 'Jupiter', sequenceNumber: 3 },
+    { question: 'What state is UM-Flint located in?', answer: 'Michigan', sequenceNumber: 1 },
+    { question: 'When was UM-Flint founded"?', answer: '1956', sequenceNumber: 2 },
+    { question: 'What river runs next to the UM-Flint campus?', answer: 'The Flint River', sequenceNumber: 3 },
 ];
 
 // Function to insert trivia questions
