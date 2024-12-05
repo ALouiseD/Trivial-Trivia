@@ -6,8 +6,8 @@
     <title>Login Page</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    <link rel="stylesheet" type="text/css" href="home-styles.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/home-styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 </head>
@@ -29,13 +29,13 @@
             <br><be>
 
             <!-- Here is the login form for the info inpur-->
-            <form class="login-form">
-                <label for="username" style="color: #020218;font-size:55px;">Login</label>
+            <form class="login-form" id="login-form">
+                <label style="color: #020218;font-size:55px;">Login</label>
                 <input type="text" id="username" name="username" placeholder="Enter username">
                 <input type="password" id="password" name="password" placeholder="Password">
         
                 <div class="button-container">
-                    <button class="sign-in" style="background-color: #00274C; color: #fff;">Enter</button>
+                    <button class="sign-in" style="background-color: #00274C; color: #fff;">Login</button>
                 </div>
                 <be>
 
@@ -43,7 +43,7 @@
                 <div>
                     <a href="#" class="forgot-password" style="color: #00274C;">Forgot Password?</a>
                     <hr>
-                    <a href="sign-up.html" class="new-user" style="color: #00274C;">New user? Complete account setup</a>
+                    <a href="signup.html" class="new-user" style="color: #00274C;">New user? Complete account setup</a>
                 </div>
             </form>
         </div>
@@ -68,7 +68,7 @@
         </div>
     </footer>
 
-    <script src="script1.js"></script>
+    <script src="js/Signup-Login.js"></script>
 </body>
 
 </html>
