@@ -4,7 +4,7 @@
     <title>Sign-up</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 
@@ -25,12 +25,12 @@
          <br><be>
 
                 <!-- form for sign up input-->
-            <form class="login-form" onsubmit="return signUp()"> <!-- onsubmit event to trigger signUp() -->
-                <label for="signUpUsername" style="color: #020218; font-size:55px;">Sign Up</label>
-                <input type="text" id="signUpUsername" name="username" placeholder="Enter username" required>
-                <input type="email" id="signUpEmail" name="email" placeholder="Enter email" required>
-                <input type="password" id="signUpPassword" name="password" placeholder="Password" required>
-                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" required>
+            <form id="signup-form" class="login-form" method="POST"> 
+                <label style="color: #020218; font-size:55px;">Sign Up</label>
+                <input type="text" id="username" name="username" placeholder="Enter username" required>
+                <input type="email" id="email" name="email" placeholder="Enter email" required>
+                <input type="password" id="password" name="password" placeholder="Password" required>
+                <input type="password" id="confirmpassword" name="confirmPassword" placeholder="Confirm Password" required>
         
                 <div class="button-container">
                     <button class="sign-in" style="background: #00274C; color: #fff;">Sign Up</button>
@@ -62,7 +62,7 @@
     </footer>
 
     <!-- Link to external JavaScript file -->
-    <script src="script1.js"></script> <!-- Add your JavaScript file to handle sign-up logic -->
+    <script src="js/Signup-Login.js"></script> 
 
 </body>
 </html>
