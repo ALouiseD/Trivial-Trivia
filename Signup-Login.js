@@ -48,19 +48,35 @@ document.getElementById("signup-form").addEventListener("submit", async function
 
 
 
-// Checking user data during login
-function login() {
-    var username = document.getElementById('username').value;
-    var password = document.getElementById('password').value;
-    
-    var storedUsername = localStorage.getItem('username');
-    var storedPassword = localStorage.getItem('password');
-    
-    if (username === storedUsername && password === storedPassword) {
-        alert("Login successful!");
-        // Redirect to the profile page
-        window.location.href = "profile.html";
+//Login code
+document.getElementById("login-form").addEventListener("submit", async function (event) {
+
+    event.preventDefault(); // Prevent default form submission
+
+    // Collect form data
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+
+    try {
+        const response = await fetch("/login", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ username, password }),
+    });
+
+    const result = await response.json();
+
+    if (response.ok) {
+      alert('Login successful!');
+      // Redirect to profile page
+      window.location.href = `/profile?username=${encodeURIComponent(result.username)}`;
     } else {
-        alert("Invalid username or password.");
+      alert(`Error: ${result.error}`);
     }
-}
+  } catch (error) {
+    console.error('Error during fetch:', error);
+    alert('An error occurred. Please try again.');
+  }
+});
