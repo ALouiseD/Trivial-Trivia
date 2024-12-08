@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- Integrate the style sheets -->
-    <head>
-    <title>Trivial Trivia 1</title>
+<head>
+    <title>Trivial Trivia - Geography</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    <link rel="stylesheet" type="text/css" href="home-styles.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/home-styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
-<!-- Custom CSS for Questions -->
 <body>
+    <!-- Navigation bar -->
     <div class="top-navbar">
         <div class="nav-left">
             <a href="index.html">Home</a>
@@ -28,50 +27,112 @@
         </div>
     </div>
 
+    <!-- Header banner -->
     <div class="banner">
         <span class="logo"><img src="images/UofMLogo.png" alt="University Logo"></span>
         <span class="text">UNIVERSITY OF MICHIGAN-FLINT</span>
     </div>
 
+    <!-- Trivia container -->
     <div class="content-wrapper">
         <div class="container mt-5">
             <div class="about-container text-center mb-4">
-                <h1 class="text-warning">Trivial Trivia</h1>
+                <h1 class="text-warning">Trivial Trivia - Geography</h1>
             </div>
-
-            <br><br>
-
-            <div class="trivia-section mx-auto text-center">
-                <h2 class="mb-4">What state is UM-Flint located in?</h2>
-
-                <br>
-<!-- Press the button to answer -->
-                <div class="d-grid gap-3">
-                    <button class="btn btn-outline-light btn-lg w-100 mb-4" onclick="checkAnswer('A')">Utah</button>
-                    <button class="btn btn-outline-light btn-lg w-100 mb-4" onclick="checkAnswer('B')">Ohio</button>
-                    <button class="btn btn-outline-light btn-lg w-100 mb-4" onclick="checkAnswer('C')">Michigan</button>
-                    <button class="btn btn-outline-light btn-lg w-100 mb-4" onclick="checkAnswer('D')">Illinois</button>
-                </div>
-
-                <a href="Question2.html" class="nav-arrow-right">
-                    <i class="fas fa-arrow-right"></i>
-                </a>
+            <div id="trivia-container" class="text-center">
+                <h2 id="question" class="mb-4"></h2>
+                <div id="answers" class="d-grid gap-3"></div>
+                <button id="next-btn" class="btn btn-primary mt-3" style="display: none;" onclick="loadNextQuestion()">Next</button>
+                <h3 id="score" class="mt-5"></h3>
             </div>
         </div>
     </div>
 
+    <script>
+        let currentQuestionIndex = 0;
+        let score = 0;
+        let questions = [];
+
+        // Fetch geography questions from the backend
+        async function fetchQuestions() {
+            const response = await fetch('/geography-questions');
+            questions = await response.json();
+            loadNextQuestion();
+        }
+
+        // Load the next question
+        function loadNextQuestion() {
+            if (currentQuestionIndex >= questions.length) {
+                // Display final score if the quiz is complete
+                document.getElementById('trivia-container').innerHTML = `<h1>Quiz Complete!</h1><h3>Your Score: ${score}/${questions.length}</h3>`;
+                return;
+            }
+
+            const question = questions[currentQuestionIndex];
+            document.getElementById('question').innerText = question.question;
+
+            // Prepare and shuffle the answers
+            const answers = [
+                { text: question.answer, isCorrect: true },
+                { text: question.wrong_answer_1, isCorrect: false },
+                { text: question.wrong_answer_2, isCorrect: false },
+                { text: question.wrong_answer_3, isCorrect: false }
+            ];
+            shuffleArray(answers);
+
+            // Display shuffled answers
+            const answersDiv = document.getElementById('answers');
+            answersDiv.innerHTML = '';
+            answers.forEach(answer => {
+                const button = document.createElement('button');
+                button.className = 'btn btn-outline-light btn-lg w-100 mb-2';
+                button.innerText = answer.text;
+                button.onclick = () => checkAnswer(answer.isCorrect);
+                answersDiv.appendChild(button);
+            });
+
+            // Hide the next button until the user answers
+            document.getElementById('next-btn').style.display = 'none';
+        }
+
+        // Check if the selected answer is correct
+        function checkAnswer(isCorrect) {
+            if (isCorrect) {
+                alert('Correct!');
+                score++;
+                updateRecord(true);
+            } else {
+                alert('Wrong!');
+                updateRecord(false);
+            }
+            document.getElementById('next-btn').style.display = 'block';
+        }
+
+        // Update the record for the current question
+        async function updateRecord(isCorrect) {
+            const questionId = questions[currentQuestionIndex].id;
+            await fetch('/update-record', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ id: questionId, record: isCorrect })
+            });
+            currentQuestionIndex++;
+        }
+
+        // Shuffle the elements of an array
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        // Start the quiz by fetching questions
+        fetchQuestions();
+    </script>
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-   <!-- Simple JavaScript to make the answer buttons work -->
-    <script>
-        function checkAnswer(selected) {
-            if (selected === 'C') {
-                alert('Correct! UM-Flint is in Michigan.');
-            } else {
-                alert('Wrong answer. Try again!');
-            }
-        }
-    </script>
 </body>
 </html>
