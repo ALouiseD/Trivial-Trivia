@@ -82,6 +82,61 @@ app.get('/questions', async (req, res) => {
     }
 });
 
+// Serve the HTML page
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'trivial-trivia.html'));
+});
+
+// Fetch Geography Questions API
+app.get('/geography-questions', async (req, res) => {
+    try {
+        const result = await pool.query(`
+            SELECT * FROM trivia_questions
+            WHERE subject = 'Geography'
+            ORDER BY sequence_number
+        `);
+        res.json(result.rows);
+    } catch (err) {
+        console.error('Error fetching geography questions:', err);
+        res.status(500).json({ error: "Internal Server Error" });
+    }
+});
+
+// Update Record API
+app.post('/update-record', async (req, res) => {
+    const { id, record } = req.body;
+    try {
+        await pool.query(`
+            UPDATE trivia_questions
+            SET record = $1
+            WHERE id = $2
+        `, [record, id]);
+        res.sendStatus(200);
+    } catch (err) {
+        console.error('Error updating record:', err);
+        res.status(500).json({ error: "Internal Server Error" });
+    }
+});
+
+// Get Scores for Profile
+app.get('/subject-scores', async (req, res) => {
+    try {
+        const query = `
+            SELECT 
+                subject,
+                COUNT(*) AS total,
+                SUM(CASE WHEN record THEN 1 ELSE 0 END) AS correct
+            FROM trivia_questions
+            GROUP BY subject;
+        `;
+        const result = await pool.query(query);
+        res.json(result.rows);
+    } catch (err) {
+        console.error('Error fetching subject scores:', err);
+        res.status(500).send('Error fetching scores');
+    }
+});
+
 // Start the server
 app.listen(80, () => {
     console.log("Server is running on http://localhost/");
