@@ -1,6 +1,13 @@
 // Sign-up code
+document.addEventListener("DOMContentLoaded", () => {
 
-document.getElementById("signup-form").addEventListener("submit", async function (event) {
+  // Check if the signup-form element exists
+  console.log("Signup Form:", document.getElementById("signup-form"));
+
+  // Check if the login-form element exists
+  console.log("Login Form:", document.getElementById("login-form"));
+  
+  document.getElementById("signup-form").addEventListener("submit", async function (event) {
 
     event.preventDefault(); // Prevent default form submission
 
@@ -11,8 +18,8 @@ document.getElementById("signup-form").addEventListener("submit", async function
     const confirmPassword = document.getElementById('confirmpassword').value;
 
     if (!username || !email || !password || !confirmPassword) {
-        alert("All fields are required.");
-        return;
+      document.getElementById("error-message").innerText = "All fields are required.";
+      return;
     }
 
     // Check if password and confirm password match
@@ -54,8 +61,13 @@ document.getElementById("login-form").addEventListener("submit", async function 
     event.preventDefault(); // Prevent default form submission
 
     // Collect form data
-    const username = document.getElementById("username").value;
+    const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
+
+    if (!email || !password) {
+      alert("Email and password are required.");
+      return;
+  }
 
     try {
         const response = await fetch("/login", {
@@ -63,15 +75,16 @@ document.getElementById("login-form").addEventListener("submit", async function 
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ username, password }),
+          body: JSON.stringify({ email, password }),
     });
 
     const result = await response.json();
 
     if (response.ok) {
       alert('Login successful!');
+      localStorage.setItem('username', result.username);
       // Redirect to profile page
-      window.location.href = `/profile?username=${encodeURIComponent(result.username)}`;
+      window.location.href = "/profile";
     } else {
       alert(`Error: ${result.error}`);
     }
@@ -79,4 +92,6 @@ document.getElementById("login-form").addEventListener("submit", async function 
     console.error('Error during fetch:', error);
     alert('An error occurred. Please try again.');
   }
+});
+
 });
