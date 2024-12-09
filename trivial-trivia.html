@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Trivial Trivia - Geography</title>
+    <title>Trivial Trivia - UM-Flint</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
@@ -37,7 +37,7 @@
     <div class="content-wrapper">
         <div class="container mt-5">
             <div class="about-container text-center mb-4">
-                <h1 class="text-warning">Trivial Trivia - Geography</h1>
+                <h1 class="text-warning">Trivial Trivia - UM-Flint</h1>
             </div>
             <div id="trivia-container" class="text-center">
                 <h2 id="question" class="mb-4"></h2>
@@ -53,9 +53,9 @@
         let score = 0;
         let questions = [];
 
-        // Fetch geography questions from the backend
+        // Fetch flint-based questions from the backend
         async function fetchQuestions() {
-            const response = await fetch('/geography-questions');
+            const response = await fetch('/flint-questions');
             questions = await response.json();
             loadNextQuestion();
         }
