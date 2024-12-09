@@ -18,7 +18,7 @@ const pool = new Pool({
     port: 5432,
 });
 
-//Signup Route
+///Signup Route
   app.post('/signup', async (req, res) => {
     console.log('Request body:', req.body);//log incoming data
     const { username, email, password } = req.body;
@@ -28,18 +28,43 @@ const pool = new Pool({
     }
 
     try {
+        //const hashedPassword = await bcrypt.hash(password, 10); // Encrypt password if we have time
         const result = await pool.query(
             'INSERT INTO users (username, email, password) VALUES ($1, $2, $3) RETURNING id',
             [username, email, password]
         );
 
-        const values = [username, email, password]; 
+        const values = [username, email, password]; // Replace `password` with `hashedPassword` if hashing
 
         res.status(201).json({ message: 'User created successfully', userId: result.rows[0].id });
     } catch (error) {
         console.error(error);
         res.status(500).json({ error: 'Internal server error' });
     }
+});
+
+
+//Login route
+app.post('/login', async (req, res) => {
+  const { email, password } = req.body;
+
+  if (!email || !password) {
+      return res.status(400).json({ error: 'All fields are required' });
+  }
+
+  try {
+      const result = await pool.query('SELECT * FROM users WHERE email = $1 AND password = $2', [email, password]);
+
+      if (result.rows.length === 0) {
+          return res.status(401).json({ error: 'Invalid credentials' });
+      }
+
+      const user = result.rows[0];
+      res.status(200).json({ message: 'Login successful', username: user.username });
+  } catch (error) {
+      console.error('Error during login:', error);
+      res.status(500).json({ error: 'Internal server error' });
+  }
 });
 
 
