@@ -87,17 +87,17 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'trivial-trivia.html'));
 });
 
-// Fetch Geography Questions API
-app.get('/geography-questions', async (req, res) => {
+// Fetch Flint Questions API
+app.get('/flint-questions', async (req, res) => {
     try {
         const result = await pool.query(`
             SELECT * FROM trivia_questions
-            WHERE subject = 'Geography'
+            WHERE subject = 'flint'
             ORDER BY sequence_number
         `);
         res.json(result.rows);
     } catch (err) {
-        console.error('Error fetching geography questions:', err);
+        console.error('Error fetching questions:', err);
         res.status(500).json({ error: "Internal Server Error" });
     }
 });
