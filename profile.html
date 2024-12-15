@@ -1,46 +1,92 @@
 <!DOCTYPE html>
-<htnl>
+<html lang="en">
 <head>
-    <title>Profile</title>
+    <!-- Page title and meta charset declaration -->
+    <title>Contact</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    <link rel="stylesheet" type="text/css" href="home-styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <!-- External stylesheets: Font Awesome icons and custom CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Font Awesome v5 for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- Font Awesome v4 for backward compatibility -->
+    <link rel="stylesheet" type="text/css" href="css/home-styles.css"> <!-- Custom styles for the home page -->
+    <link rel="stylesheet" type="text/css" href="css/styles.css"> <!-- Main stylesheet for general styling -->
 </head>
 
 <body>
+    <!-- Navigation bar at the top -->
     <div class="top-navbar">
         <div class="nav-left">
+            <!-- Links to different sections of the website -->
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
             <a href="contact.html">Contact</a>
         </div>
+
+        <!-- Search bar with an icon -->
         <div class="search-container">
-            <i class="fas fa-search"></i>
-            <input type="search" placeholder="Search...">
+            <i class="fas fa-search"></i> <!-- Search icon from Font Awesome -->
+            <input type="search" placeholder="Search..."> <!-- Input field for search functionality -->
         </div>
 
         <div class="nav-right">
-
+            <!-- Login and Sign-Up buttons -->
             <a href="login.html" class="login-btn">Login</a>
-            <a href="#sign-up" class="sign-btn">Sign Up</a>
+            <a href="signup.html" class="sign-btn">Sign Up</a>
         </div>
     </div>
+
+    <!-- Banner section with logo and university name -->
     <div class="banner">
-        <span class="logo"><img src="images/UofMLogo.png"></span>
-        <span class="text">UNIVERSITY OF MICHIGAN-FLINT</span>
-
-
+        <span class="logo"><img src="images/UofMLogo.png"></span> <!-- University logo -->
+        <span class="text">UNIVERSITY OF MICHIGAN-FLINT</span> <!-- Text displaying the university name -->
     </div>
 
+    <!-- Second navigation menu -->
     <div class="navbar">
         <div class="menu">
-            <a href="games.html">Games</a>
+            <!-- Links to Games, Leaderboard, and Pricing pages -->
+            <a href="Game1-TrivialTrivia.html">Games</a>
             <a href="students.html">Leaderboard</a>
             <a href="pricing.html">Pricing</a>
         </div>
     </div>
 
+    <!-- Main content container for contact information -->
+    <div class="contact-container">
+        <!-- Header for the contact section -->
+        <div class="contact-container-content">
+            <h1>Welcome, <span id="profile-username"></span></h1>
+        </div>
+
+        <!-- Contact details within the container -->
+        <div class="contact-container-content">
+            <div class="profile-container">
+                <div class="profile-details">
+                </div>
+                <button id="logout-btn">Logout</button>
+              </div>
+        </div>
+    </div>
+
+    <!-- Footer section with social media links -->
+    <footer>
+        <div class="social-media">
+            <!-- Social media icons with links to respective pages -->
+            <a href="https://www.facebook.com/YourPage" target="_blank">
+                <i class="fab fa-facebook-f"></i> <!-- Facebook icon -->
+            </a>
+            <a href="https://www.twitter.com/YourPage" target="_blank">
+                <i class="fab fa-twitter"></i> <!-- Twitter icon -->
+            </a>
+            <a href="https://www.instagram.com/YourPage" target="_blank">
+                <i class="fab fa-instagram"></i> <!-- Instagram icon -->
+            </a>
+            <a href="https://www.linkedin.com/YourPage" target="_blank">
+                <i class="fab fa-linkedin-in"></i> <!-- LinkedIn icon -->
+            </a>
+        </div>
+        <script src="profile.js"></script>
+    </footer>
 </body>
-</htnl>
+</html>
